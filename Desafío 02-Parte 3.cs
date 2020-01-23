@@ -3,27 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApp3
-    {        class Program
+namespace Desafio 02-Parte3
+{
+    class Program
+    {
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
-            {
-                Console.WriteLine("Ingrese un ángulo c y el valor correspondiente al cateto 1");
-                double cgrados = double.Parse(Console.ReadLine());
-                double z = double.Parse(Console.ReadLine());
-                double c = cgrados * (Math.PI / 180.0);
-                Console.WriteLine("Para un triángulo rectángulo los resultados serían");
-                Console.WriteLine("Sen(c) = z/h, por lo tanto h = z/sen(c)");
-                double h = z / Math.Sin(c);
-                Console.WriteLine("Hipotenusa =" + h);
-                Console.WriteLine("Cos(c) = y/h, por lo tanto y = cos(c)*h");
-                double y = Math.Cos(c) * h;
-                Console.WriteLine("cateto2 =" + y);
-                Console.WriteLine("Sen(a) = y/h, por lo tanto a = arcsen(y/h)");
-                double a = Math.Asin(y / h) * (180.0 / Math.PI);
-                Console.WriteLine("ángulo a =" + a);
-                Console.WriteLine("ángulo b = 90 por ser un triángulo rectángulo");
+            //Ingreso de los datos
+            Console.Write("Inserte el valor del angulo c (en caso de que sea un decimal utilice la coma): ");
+            double c = double.Parse(Console.ReadLine());
+            Console.Write("Inserte el valor del cateto z (en caso de que sea un decimal utilice la coma): ");
+            double z = double.Parse(Console.ReadLine());
 
-            }
+            //Conversion a Radianes de los datos ingresados
+            double C = c * (Math.PI / 180.0);
+
+            //Calculo del valor del angulo a
+            Console.Write("El valor del angulo a es: ");
+            double a = (90 - c);
+            Console.WriteLine(a);
+
+            //Calculo de la hipotenusa t
+            Console.Write("El valor de la hipotenusa t es: ");
+            double t = (z / Math.Sin(C));
+            Console.WriteLine(t);
+
+            //Calculo del cateto y
+            Console.Write("El valor del cateto y es: ");
+            double y = (Math.Cos(C) * t);
+            Console.WriteLine(y);
+            Console.ReadLine();
+
+
+
+
         }
     }
+}
