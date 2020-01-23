@@ -3,28 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Desafio 02-Parte1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ingrese un ángulo a y el valor de la hipotenusa");
-            double agrados = double.Parse(Console.ReadLine());
-            double h = double.Parse(Console.ReadLine());
-            double a = agrados * (Math.PI / 180.0);
-            Console.WriteLine("Para un triángulo rectángulo los resultados serían");
-            Console.WriteLine("Sen(a) = y/h, por lo tanto y = sen(a)*h");
-            double y = Math.Sin(a) * h;
-            Console.WriteLine("cateto1 =" + y);
-            Console.WriteLine("Cos(c) = y/h, por lo tanto c = arccos(y/h)");
-            double c = Math.Acos(y / h) * (180.0 / Math.PI);
-            Console.WriteLine("ángulo c =" + c);
-            double cgrados = c * (Math.PI / 180.0);
-            Console.WriteLine("Sen(c) = z/h, por lo tanto z = sen(c)*h");
-            double z = Math.Sin(cgrados) * h;
-            Console.WriteLine("cateto2 =" + z);
-            Console.WriteLine("ángulo b = 90 por ser un tríangulo rectángulo");
+            //Definir los catetos
+            Console.Write("Inserte el valor de Y:");
+            double Y = double.Parse(Console.ReadLine());
+            Console.Write("Inserte el valor de Z:");
+            double Z = double.Parse(Console.ReadLine());
+
+
+            //Hallar el valor de la hipotenusa 
+
+            Console.Write("El valor de la hipotenusa es:");
+            double t = Math.Sqrt((Y * Y) + (Z * Z));
+            Console.WriteLine(t);
+
+            //Hallar el valor del angulo a 
+
+            double a = Math.Atan(Y / Z);
+            double A = a * (180 / Math.PI);
+            Console.Write("El valor del angulo A:");
+            Console.WriteLine(A);
+
+            //Hallar el valor del angulo c 
+
+            double c = Math.Atan(Z / Y);
+            double C = c * (180 / Math.PI);
+            Console.Write("El valor del angulo C:");
+            Console.WriteLine(C);
+            Console.ReadLine();
         }
     }
 }
