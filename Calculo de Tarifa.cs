@@ -33,6 +33,5 @@ namespace Calculo_de_Tarifa
             }
         }
     }
-}
-    }
-}
+
+    
