@@ -12,9 +12,9 @@ namespace Implementar_al_juego_BlackJack
         {
             Random Aleatorio = new Random();
 
-            int C1 = Aleatorio.Next(1, 10);
+            int C1 = Aleatorio.Next(1, 11);
             Console.WriteLine("Su primera carta es: " + C1);
-            int C2 = Aleatorio.Next(1, 10);
+            int C2 = Aleatorio.Next(1, 11);
             Console.WriteLine("Su segunda carta es: " + C2);
 
             int NCarta = 0;
